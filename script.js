@@ -74,10 +74,14 @@ const updateCartStorage = (item, render = false, remove = false) => {
 const displayCart = (cart) => {
   const cartCtn = document.getElementById("cart");
   cartCtn.innerHTML = "";
-  if (cart) {
+  if (cart.length) {
     for (const item of cart) {
       cartCtn.appendChild(cartItemTpl(item));
     }
+  } else {
+    let empty = document.createElement("li");
+    empty.innerText = "Cart empty";
+    cartCtn.appendChild(empty);
   }
 };
 
