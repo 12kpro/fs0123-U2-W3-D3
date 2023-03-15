@@ -6,18 +6,22 @@ const cardTpl = (book) => {
   card.innerHTML = `
   
     <div class="card">
-        <div class="row g-0">
+        <div class="row g-0 h-100 align-items-stretch">
             <div class="col-md-4">
                 <img src="${book.img}" class="img-thumbnail">
             </div>
             <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">${book.title}</h5>
-                    <p class="card-text mb-1">Prezzo:${book.price}€</p>
-                    <p class="card-text mb-1"><small class="text-muted">Categoria: ${book.category}</small></p>
-                    <p class="card-text mb-1"><small class="text-muted">ASIN: ${book.asin}</small></p>
-                    <button id="delete" class="btn btn-danger">Scarta</button>
-                    <button id="buy" class="btn btn-success">Compra ora</button>
+                <div class="card-body d-flex flex-column justify-content-between h-100">
+                    <div>
+                        <h5 class="card-title">${book.title}</h5>
+                        <p class="card-text mb-1"><small class="text-muted">Prezzo:</small><strong> ${book.price}€</strong></p>
+                        <p class="card-text mb-1"><small class="text-muted">Categoria:</small><strong> ${book.category}</strong></p>
+                        <p class="card-text mb-1"><small class="text-muted">ASIN:</small><strong> ${book.asin}</strong></p>
+                    </div>
+                    <div>
+                        <button id="delete" class="btn btn-danger">Scarta</button>
+                        <button id="buy" class="btn btn-success">Compra ora</button>
+                    </div>
                 </div>
             </div>
         </div>
